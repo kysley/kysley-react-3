@@ -77,6 +77,14 @@ export default {
         use: ['url-loader'],
         include: path.join(__dirname, 'src'),
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          limit: 10 * 1024,
+          noquotes: true,
+        },
+      },
     ],
   },
 }
